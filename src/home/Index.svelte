@@ -1,18 +1,16 @@
 <script>
-	import { resolveComponent } from "@/utils/resolveComponent";
+	import { resolvePermission } from "@/utils/resolvePermission";
 	import Perms from "@/services/accessController";
 
-	let navbar_component = resolveComponent({
+	let navbar_component = resolvePermission({
 		permission_required: Perms.Navbar.permission,
 	});
+	console.log(navbar_component);
 </script>
 
 <h1>home</h1>
-{#if navbar_component}
-	<svelte:component this={navbar_component} />
-{:else}
-	<h1>No permission</h1>
-{/if}
+
+<svelte:component this={navbar_component} />
 
 <style>
 	h1 {

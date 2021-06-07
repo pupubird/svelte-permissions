@@ -1,6 +1,9 @@
 import Navbar from "@/components/Navbar.svelte";
 export default {
 	Navbar: {
+		billing: {
+			permission: "can_view_billing",
+		},
 		permission: "can_view_navbar",
 		component: Navbar,
 	},
@@ -14,18 +17,10 @@ export default {
 				permission: "can_view_activity",
 				component: Navbar,
 			},
-			User: [
-				{
-					permission: "can_view_billing",
-					component: Navbar,
-				},
-				[
-					{
-						permission: "can_view_username",
-						component: Navbar,
-					},
-				],
-			],
+			User: {
+				permission: "can_view_users",
+				component: Navbar,
+			},
 		},
 	],
 };
